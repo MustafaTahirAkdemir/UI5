@@ -5,6 +5,7 @@ sap.ui.define([
 	"use strict";
 
 	return UIComponent.extend("ui5.walkthrough.Component", {
+
 		metadata: {
 			interfaces: ["sap.ui.core.IAsyncContentCreation"],
 			manifest: "json"
@@ -14,7 +15,7 @@ sap.ui.define([
 			// call the init function of the parent
 			UIComponent.prototype.init.apply(this, arguments);
 
-			// set data model on view
+			// set data model
 			const oData = {
 				recipient: {
 					name: "World"
@@ -22,6 +23,7 @@ sap.ui.define([
 			};
 			const oModel = new JSONModel(oData);
 			this.setModel(oModel);
+
 			// create the views based on the url/hash
 			this.getRouter().initialize();
 		}
